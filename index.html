@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube jQuery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/youtube-api-search/index.js"></script>
+
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">YouTube</a>
+            </div>
+            <form class="navbar-form" role="search">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search" placeholder="Search">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div id="actual"></div>
+            </div>
+            <div class="col-md-5">
+                <div id="root"></div>
+            </div>
+        </div>
+    </section>
+    <div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
