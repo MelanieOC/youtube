@@ -1,5 +1,5 @@
 #root>div{
-  padding: 20px 15px;
+  padding: 20px 10px;
 }
 #root img{
   width: 100%;
@@ -23,4 +23,14 @@ body {
 .videos:hover{
   background-color: #999;
   color: #AA2624;
+}
+
+@media screen and (max-width: 767px) {
+  #root{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .videos {
+    flex: 33.333333%;
+  }
 }

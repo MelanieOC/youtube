@@ -21,10 +21,10 @@ class App {
                   const channel = video.snippet.channelTitle;
                   const url = `https://www.youtube.com/embed/${video.id.videoId}`;
                   let div= $('<div>').addClass("row videos").html(`
-                              <div class="col-md-6">
+                              <div class="col-md-6 col-sm-6">
                                     <img src=${imageUrl}>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-6 col-sm-6">
                                     <h4>${title}</h4>
                                     <p>${channel}</p>
                               </div>`);
