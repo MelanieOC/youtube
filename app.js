@@ -10,20 +10,17 @@ class App {
                   searchTerm: null
             };
       }
-
       init() {
-            //app.videoSearch("iPhone");
             this.youtubeSearch("iPhone X");
             this.events();
       }
-      //<iframe className="embed-responsive-item" src={url}> </iframe>
       getVideoList(videos) {
             return videos.map((video, index) => {
                   const imageUrl = video.snippet.thumbnails.default.url;
                   const title = video.snippet.title;
                   const channel = video.snippet.channelTitle;
                   const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-                  return `<div class="row">
+                  return `<div class="row videos">
                               <div class="col-md-6">
                                     <img src=${imageUrl}>
                               </div>
@@ -39,10 +36,10 @@ class App {
             const title = video.snippet.title;
             const description = video.snippet.description;
             return `<div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item" src=${url}> </iframe>
-            </div>
-             <h2>${title}</h2>
-             <p>${description}</p>`;
+                        <iframe class="embed-responsive-item" src=${url}> </iframe>
+                  </div>
+                  <h2>${title}</h2>
+                  <p>${description}</p>`;
       }
       youtubeSearch(searchTerm) {
             YTSearch({ key: API_KEY, term: searchTerm }, data => {
