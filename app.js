@@ -20,7 +20,7 @@ class App {
                   const title = video.snippet.title;
                   const channel = video.snippet.channelTitle;
                   const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-                  return `<div class="row videos">
+                  let div= `<div class="row videos">
                               <div class="col-md-6">
                                     <img src=${imageUrl}>
                               </div>
@@ -29,6 +29,8 @@ class App {
                                     <p>${channel}</p>
                               </div>
                         </div>`;
+                  $(div).click(()=>this.youtubeSearch(title));
+                  return div;
             });
       }
       currentVideo(video) {
