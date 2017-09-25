@@ -51,7 +51,7 @@ class App {
                         searchTerm: searchTerm
                   };
                   console.log(this.result.videos);
-                  var list = this.getVideoList(this.result.videos);
+                  var list = this.getVideoList(this.result.videos.slice(1));
                   let actual = this.currentVideo(this.result.selectedVideo);
                   $("#root").append(list);
                   $('#actual').append(actual);

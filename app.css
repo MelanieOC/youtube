@@ -14,9 +14,7 @@ body {
   letter-spacing: 3px;
   font-weight: normal;
 }
-#root>div{
-  padding: 20px 10px;
-}
+
 #root img{
   width: 100%;
 }
@@ -31,6 +29,7 @@ body {
   color: #999;
 }
 .videos{
+  padding: 20px 10px;
   cursor: pointer;
 }
 
@@ -45,6 +44,10 @@ body {
     flex-wrap: wrap;
   }
   .videos {
-    flex: 33.333333%;
+    flex: 45%;
+    margin: 2%;
+  }
+  .videos:hover{
+    text-decoration: underline;
   }
 }
