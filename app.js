@@ -20,15 +20,14 @@ class App {
                   const title = video.snippet.title;
                   const channel = video.snippet.channelTitle;
                   const url = `https://www.youtube.com/embed/${video.id.videoId}`;
-                  let div= `<div class="row videos">
+                  let div= $('<div>').addClass("row videos").html(`
                               <div class="col-md-6">
                                     <img src=${imageUrl}>
                               </div>
                               <div class="col-md-6">
                                     <h4>${title}</h4>
                                     <p>${channel}</p>
-                              </div>
-                        </div>`;
+                              </div>`);
                   $(div).click(()=>this.youtubeSearch(title));
                   return div;
             });
@@ -44,6 +43,7 @@ class App {
                   <p>${description}</p>`;
       }
       youtubeSearch(searchTerm) {
+            this.clean();
             YTSearch({ key: API_KEY, term: searchTerm }, data => {
                   this.result = {
                         videos: data,
@@ -61,11 +61,13 @@ class App {
             $('#search').keypress((event) => {
                   if (event.keyCode == 13) {
                         event.preventDefault();
-                        $('#actual').empty();
-                        $("#root").empty();
                         this.youtubeSearch($('#search').val());
                   }
             })
+      }
+      clean(){
+            $('#actual').empty();
+            $("#root").empty();
       }
       videoSearch(searchTerm) {
             jQuery.getJSON("list.json", data => {
